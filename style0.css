@@ -1,0 +1,272 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+body {--s: 50px;
+  --c: #191b22;
+  --_s: calc(2*var(--s)) calc(2*var(--s));
+  --_g: 35.36% 35.36% at;
+  --_c: #0000 66%,#20222a 68% 70%,#0000 72%;
+  background: 
+    radial-gradient(var(--_g) 100% 25%,var(--_c)) var(--s) var(--s)/var(--_s), 
+    radial-gradient(var(--_g) 0 75%,var(--_c)) var(--s) var(--s)/var(--_s), 
+    radial-gradient(var(--_g) 100% 25%,var(--_c)) 0 0/var(--_s), 
+    radial-gradient(var(--_g) 0 75%,var(--_c)) 0 0/var(--_s), 
+    repeating-conic-gradient(var(--c) 0 25%,#0000 0 50%) 0 0/var(--_s), 
+    radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
+  background-attachment: fixed;
+}
+
+/*HEADER */
+h1{
+    color: white;
+    font-size: 50px;
+}
+
+nav a {
+    color: white;
+}
+ 
+ .title img {
+    width: 300px; /* Ancho inicial de la imagen */
+    height: auto; /* Mantiene la proporción original */
+    display: block;
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    transition: transform 0.5s; /* Agregamos una transición suave para el efecto de zoom  */
+    padding: 20px;
+ 
+}
+
+.title img:hover {
+    transform: scale(1.1); /* Hace un zoom al 110% cuando el cursor pasa sobre la imagen */
+  
+}
+
+.container{
+    position: relative;
+    background-color: transparent;
+    background: #fff;
+    width: 40%;
+    max-width: 1000px;
+    margin: 1.6em auto;
+    display: block;
+    height: 500px;
+    opacity: 0.8 ;
+    transition: transform 0.5s; 
+    /*---Fondo decorativo---*/
+    background-image: url('Fondo Contenedor.png'); 
+    background-size: cover; /* Ajusta la imagen de fondo al contenedor sin distorsionarla. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    background-position: center center; /* Alinea la imagen de fondo al centro del contenedor. */
+  
+
+} 
+
+/*---TEXTO QUE SE ENCUENTRA DENTRO DEL CONTENEDOR---*/
+.article p{
+    padding: 10px 10px;
+    font-family: 'Sawarabi Mincho', serif;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgb(255, 3, 3);
+
+}
+
+/* ---PALILLOS CON ANIMACION ---*/
+
+.palillos {
+    position: relative;
+    top: -505px;
+    left: -147px;
+    transition: transform 0.3s;
+}
+.palillos:hover {
+
+    transform: scale(1.2);
+}
+
+
+/*---IMAGEN DEL SUSHI EN LA PARTE INFERIOR DERECHA---*/
+.sushi1 {
+    position: relative;
+    top:-355px;
+    left: 970px;
+    transition: transform 0.3s;
+}
+
+/*----BOTON ANIMADO---*/
+
+.wrapper{
+    position: absolute;
+    bottom: 50px;;
+    right: 70px;;
+    transform: translateX(-50%);
+    width: fit-content;
+    height:auto;
+    z-index: 2;
+    
+}
+
+button{
+    width:200px;
+    height:70px;
+    background: linear-gradient(to left top, red 50%, red 50%);
+    border-style: none;
+    color:#000;
+    font-size: 23px;
+    letter-spacing: 3px;
+    font-family: 'Sawarabi Mincho', serif;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    padding: 0px;
+    overflow: hidden;
+    transition: all .5s;
+    box-shadow: 0px 1px 2px rgba(0,0,0,.2);
+}
+button span{
+    position: absolute;
+    display: block;
+}
+button span:nth-child(1){
+    height: 3px;
+    width:200px;
+    top:0px;
+    left:-200px;
+    background: linear-gradient(to right, rgba(0,0,0,0), #000);
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    animation: span1 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes span1{
+    0%{
+        left:-200px
+    }
+    100%{
+        left:200px;
+    }
+}
+button span:nth-child(2){
+    height: 70px;
+    width: 3px;
+    top:-70px;
+    right:0px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), #000);
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    animation: span2 2s linear infinite;
+    animation-delay: 2s;
+}
+@keyframes span2{
+    0%{
+        top:-70px;
+    }
+    100%{
+        top:70px;
+    }
+}
+button span:nth-child(3){
+    height:3px;
+    width:200px;
+    right:-200px;
+    bottom: 0px;
+    background: linear-gradient(to left, rgba(0,0,0,0), #000);
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 1px;
+    animation: span3 2s linear infinite;
+    animation-delay: 3s;
+}
+@keyframes span3{
+    0%{
+        right:-200px;
+    }
+    100%{
+        right: 200px;
+    }
+}
+
+button span:nth-child(4){
+    height:70px;
+    width:3px;
+    bottom:-70px;
+    left:0px;
+    background: linear-gradient(to top, rgba(0,0,0,0), #000);
+    border-top-right-radius: 1px;
+    border-top-left-radius: 1px;
+    animation: span4 2s linear infinite;
+    animation-delay: 4s;
+}
+@keyframes span4{
+    0%{
+        bottom: -70px;
+    }
+    100%{
+        bottom:70px;
+    }
+}
+
+button:hover{
+    transition: all .5s;
+    transform: rotate(-3deg) scale(1.1);
+    box-shadow: 0px 3px 5px rgba(0,0,0,.4);
+}
+button:hover span{
+    animation-play-state: paused;
+}
+
+
+.button:hover {
+    transform: scale(1.4);
+}
+
+
+
+/* Media query para pantallas medianas (por ejemplo, tablets) */
+@media (max-width: 768px) {
+    .container {
+        width: 70%; /* Reduzco el ancho del contenedor para pantallas medianas */
+    }
+    .palillos {
+        top: -505px; /* Ajusta la posición vertical de los palillos */
+        left: -148px; /* Ajusta la posición horizontal de los palillos */
+    }
+    .wrapper button {
+        bottom: 20px; /* Ajusta la posición vertical del botón */
+    }
+}
+
+/* Media query para pantallas pequeñas (por ejemplo, móviles) */
+@media (max-width: 480px) {
+    .container {
+        width: 80%; /* Ajusta el ancho del contenedor al 100% para ocupar todo el ancho */
+    }
+    .article p {
+        font-size: 1em; /* Reduce aún más el tamaño del texto */
+    }
+    .palillos {
+        top: -490px; /* Ajusta la posición vertical de los palillos */
+        left: -146px; /* Ajusta la posición horizontal de los palillos */
+    }
+    .wrapper button {
+        bottom: 20px; /* Ajusta la posición vertical del botón */
+        right: -80px;
+    }
+}
+
+
+footer{
+    border: 10px;
+    margin: 5px;
+    padding: 5;
+    text-align: center;
+    background-color:#343F4F;
+  }
+
+
+
+

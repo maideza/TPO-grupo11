@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Bienvenidos a Oasis Sushi</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/3a6a7a1eda.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
+</head>
+
+<body>
+<header>
+    <h1>Oasis Sushi</h1> 
+    <nav>
+        <a href="index.html">
+        <img src="./img/logo oasis.png" alt="logo" width="40">
+        </a>
+        <a href="index.html">Home</a>
+        <a href="main.html">Presentación</a>
+        <a href="receta.html">Receta</a>
+        <a href="contacto.html">Formulario de Contacto</a>        
+    </nav>
+
+<header class="title">
+
+    <main>
+        <h2>Formulario de Contacto</h2>
+        <form action="./show_data.html">
+            <label for="txtNombre">Nombre:</label>
+            <input type="text" name="txtNombre" id="txtNombre" placeholder="Escriba su Nombre">
+            <br>
+            <label for="txtApellido">Apellido:</label>
+            <input type="text" name="txtApellido" placeholder="Escriba su Apellido">
+            <br>
+            <label for="txtGénero">Género:</label>
+            <input type="radio" name="txtGénero"id="txtGénero" value="Hombre">
+            Hombre
+            <input type="radio" name="txtGénero"id="txtGénero" value="Mujer"> 
+            Mujer
+            <br>
+            <label for="txtEdad">Edad:    </label>
+            <input type="number" name="txtEdad" id="txtEdad" min="0" max="100">
+            <br>
+            <label for="txtEmail">Mail:   </label>
+            <input type="email"name="txtEmail" id="txtEmail" placeholder="Escriba su email"> 
+            <br>
+            <label for="txtTeléfono">Teléfono:</label>
+            <input type="number"name="txtTeléfono" id="txtTeléfono" placeholder="Escriba su teléfono"> 
+            <br>
+            <label for="">Comentario</label>
+            <br>
+            <textarea type="text" name="txtComentario" id="txtComentario" rows="5" cols="50"></textarea>
+            <br>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Borrar">
+        </form>
+
+    <br>
+    </main>    
+</header>
+
+<footer>
+    <nav>
+        <a href="https://www.instagram.com"> <i class="fa-brands fa-instagram fa-lg" style="color: #ffffff;"></i></a>
+        <a href="https://www.facebook.com/"> <i class="fa-brands fa-facebook fa-lg" style="color: #ffffff;"></i></a>      
+    </nav>
+    <p>Derechos reservados 2023</p>
+</footer>
+
+</body>
+</html>
