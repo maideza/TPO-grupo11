@@ -1,16 +1,324 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background: #E5E5E5;
+
+}
+
 main{
-  margin: 5px;
-  padding: 5px;
+    max-width: 800px;
+    width: 90%;
+    margin: auto;
+    padding: 40px;
+    
+
 }
 
 nav a {
-  color: black;
+    color: black;
+  }
+  
+  footer{
+      border: 10px;
+      margin: 5px;
+      padding: 5;
+      text-align: center;
+      background-color:#343F4F;
+    }
+
+
+.formulario{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.formulario__label{
+
+    display: block;
+    font-weight: 700;
+    padding: 10px;
+    cursor: pointer;
 }
 
-footer{
-    border: 10px;
-    margin: 5px;
-    padding: 5;
-    text-align: center;
-    background-color:#343F4F;
-  }
+.formulario__grupo-input{
+
+    position: relative;
+    
+}
+
+.formulario__input{
+
+    width: 100%;
+    background: #fff;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+
+
+}
+
+.formulario__input:focus{/*para encuadrar el campo seleccionado*/
+
+    border: 3px solid #0075FF;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163,163, 163, 0.4);
+}
+
+
+.formulario__input-error {
+
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+}
+
+.formulario__input-error-activo{
+
+    display: block;
+}
+
+
+.formulario__validacion-estado{
+
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    z-index: 100;/* me aseguro que esta por arriba de otros elementos*/
+    font-size: 16px;
+    opacity: 0;
+}
+
+
+.formulario__mensaje,
+.formulario__grupo-btn-enviar,
+.formulario__comentario{
+    grid-column: span 2;
+}
+
+.formulario__mensaje{
+    height: 45px;
+    line-height: 45px;
+    background:#F66060 ;
+    padding: 0 15px;
+    border-radius: 3px;
+    display: none;
+
+}
+
+
+.formulario__mensaje-activo{
+
+    display: block;
+}
+
+.formulario__mensaje p {
+    margin: 0; /*pongo el margen en 0 para el texto, para que no me ocupe espacio en el recuadro rojo*/
+}
+
+
+.formulario__grupo-btn-enviar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*position: absolute;*/
+   /* bottom: 50px;*/
+   /* right: 460px;*/
+    transform: translateX(0%);
+    /*width: fit-content;*/
+    /*height:auto;*/
+    z-index: 2;
+    padding: 60px;
+}
+
+
+button{
+    width:200px;
+    height:70px;
+    background: linear-gradient(to left top, red 50%, red 50%);
+    border-style: none;
+    color:#000;
+    font-size: 23px;
+    letter-spacing: 3px;
+    font-family: 'Sawarabi Mincho', serif;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    padding: 0px;
+    overflow: hidden;
+    transition: all .5s;
+    box-shadow: 0px 1px 2px rgba(0,0,0,.2);
+
+}
+button span{
+    position: absolute;
+    display: block;
+}
+button span:nth-child(1){
+    height: 3px;
+    width:200px;
+    top:0px;
+    left:-200px;
+    background: linear-gradient(to right, rgba(0,0,0,0), #000);
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    animation: span1 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes span1{
+    0%{
+        left:-200px
+    }
+    100%{
+        left:200px;
+    }
+}
+button span:nth-child(2){
+    height: 70px;
+    width: 3px;
+    top:-70px;
+    right:0px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), #000);
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    animation: span2 2s linear infinite;
+    animation-delay: 2s;
+}
+@keyframes span2{
+    0%{
+        top:-70px;
+    }
+    100%{
+        top:70px;
+    }
+}
+button span:nth-child(3){
+    height:3px;
+    width:200px;
+    right:-200px;
+    bottom: 0px;
+    background: linear-gradient(to left, rgba(0,0,0,0), #000);
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 1px;
+    animation: span3 2s linear infinite;
+    animation-delay: 3s;
+}
+@keyframes span3{
+    0%{
+        right:-200px;
+    }
+    100%{
+        right: 200px;
+    }
+}
+
+button span:nth-child(4){
+    height:70px;
+    width:3px;
+    bottom:-70px;
+    left:0px;
+    background: linear-gradient(to top, rgba(0,0,0,0), #000);
+    border-top-right-radius: 1px;
+    border-top-left-radius: 1px;
+    animation: span4 2s linear infinite;
+    animation-delay: 4s;
+}
+@keyframes span4{
+    0%{
+        bottom: -70px;
+    }
+    100%{
+        bottom:70px;
+    }
+}
+
+button:hover{
+    transition: all .5s;
+    transform: rotate(-3deg) scale(1.1);
+    box-shadow: 0px 3px 5px rgba(0,0,0,.4);
+}
+button:hover span{
+    animation-play-state: paused;
+}
+
+
+.button:hover {
+    transform: scale(1.4);
+}
+
+.formulario__mensaje-exito {
+    
+    font-size: 14px;
+    color: #119200;
+    display: none;
+}
+
+.formulario__mensaje-exito-activo{
+
+    display: block;
+
+}
+
+
+.formulario__comentario{
+
+    display: block;
+    align-items: center;
+}
+
+
+/*--------------Estilos para la Validacion-----------------------*/
+
+.formulario__grupo-correcto .formulario__validacion-estado{
+
+    color:#1ed12d;
+    opacity: 1;
+
+}
+
+
+.formulario__grupo-incorrecto .formulario__label{
+
+    color:#bb2929;
+}
+
+
+.formulario__grupo-incorrecto .formulario__validacion-estado{
+
+    color:#bb2929;
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input{
+
+    border: 3px solid #bb2929;
+
+}
+/*-----------------------Mediaqueries-----------------------------*/
+@media screen and(max-widht:800px) {
+
+    .formulario{
+        grid-template-columns: 1fr;
+    }
+
+
+    .formulario__mensaje,
+    .formulario__grupo-btn-enviar,
+    .formulario__comentario{
+
+        grid-column: 1;
+    }
+
+    .formulario__btn{
+        width: 100%;
+    }
+
+}

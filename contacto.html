@@ -1,75 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
-    <title>Bienvenidos a Oasis Sushi</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/3a6a7a1eda.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
-</head>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Oasis Sushi</title>
+        <link rel="stylesheet" href="   ">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="styles.css">
+    </head>
 <body>
-<header>
-    <h1>Oasis Sushi</h1> 
-    <nav>
-        <a href="index.html">
-        <img src="./img/logo oasis.png" alt="logo" width="40">
-        </a>
-        <a href="index.html">Home</a>
-        <a href="main.html">Presentación</a>
-        <a href="receta.html">Receta</a>
-        <a href="contacto.html">Formulario de Contacto</a>        
-    </nav>
-
-<header class="title">
-
+    <header>
+        <h1>Oasis Sushi</h1> 
+        <nav>
+            <a href="index.html">
+            <img src="./img/logo oasis.png" alt="logo" width="40">
+            </a>
+            <a href="index.html">Home</a>
+            <a href="main.html">Presentación</a>
+            <a href="receta.html">Receta</a>
+            <a href="contacto.html">Formulario de Contacto</a>        
+        </nav>
+    </header>
     <main>
-        <h2>Formulario de Contacto</h2>
-        <form action="./show_data.html">
-            <label for="txtNombre">Nombre:</label>
-            <input type="text" name="txtNombre" id="txtNombre" placeholder="Escriba su Nombre">
-            <br>
-            <label for="txtApellido">Apellido:</label>
-            <input type="text" name="txtApellido" placeholder="Escriba su Apellido">
-            <br>
-            <label for="txtGénero">Género:</label>
-            <input type="radio" name="txtGénero"id="txtGénero" value="Hombre">
-            Hombre
-            <input type="radio" name="txtGénero"id="txtGénero" value="Mujer"> 
-            Mujer
-            <br>
-            <label for="txtEdad">Edad:    </label>
-            <input type="number" name="txtEdad" id="txtEdad" min="0" max="100">
-            <br>
-            <label for="txtEmail">Mail:   </label>
-            <input type="email"name="txtEmail" id="txtEmail" placeholder="Escriba su email"> 
-            <br>
-            <label for="txtTeléfono">Teléfono:</label>
-            <input type="number"name="txtTeléfono" id="txtTeléfono" placeholder="Escriba su teléfono"> 
-            <br>
-            <label for="">Comentario</label>
-            <br>
-            <textarea type="text" name="txtComentario" id="txtComentario" rows="5" cols="50"></textarea>
-            <br>
-            <input type="submit" value="Enviar">
-            <input type="reset" value="Borrar">
+        <form action="" class="formulario" id="formulario"><!-- class para acceder al formulario en css y id para acceder a formulario en js-->
+            <!-- Grupo: Nombre-->
+            <div class="formulario__grupo" id="grupo__nombre">
+                <label for="nombre" class="formulario__label">Nombre</label>
+                <div class="formulario__grupo-input">
+                    <input type= "text"  class="formulario__input" name="nombre" id="nombre" placeholder="nombre">
+                    <i class="formulario__validacion-estado fa-solid fa-circle-check"></i>
+                </div>
+                <p class="formulario__input-error">El nombre sólo debe tener letras </p>
+                
+            </div>
+    
+    
+            <!-- Grupo: Apellido-->
+            <div class="formulario__grupo" id="grupo__apellido">
+                <label for="apellido" class="formulario__label">Apellido</label>
+                <div class="formulario__grupo-input">
+                    <input type="text" class="formulario__input" name="apellido" id="apellido" placeholder="apellido">
+                    <i class="formulario__validacion-estado fa-solid fa-circle-check"></i>
+                    
+                </div>
+                <p class="formulario__input-error">El apellido sólo debe tener letras </p>
+            </div>
+    
+    
+            <!-- Grupo: Mail-->
+            <div class="formulario__grupo" id="grupo__mail">
+                <label for="mail" class="formulario__label">Email</label>
+                <div class="formulario__grupo-input"> 
+                    <input type="email" class="formulario__input" name="mail" id="mail" placeholder="email@mail.com">
+                    <i class="formulario__validacion-estado fa-solid fa-circle-check"></i>
+    
+                </div>
+                <p class="formulario__input-error">El email sólo puede contener letras, números, puntos, guiones y guión bajo. </p>
+            </div>
+    
+             <!-- Grupo: Telefono-->
+             <div class="formulario__grupo" id="grupo__telefono">
+                <label for="telefono" class="formulario__label">Teléfono</label>
+                <div class="formulario__grupo-input">
+                    <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="1123654783">
+                    <i class="formulario__validacion-estado fa-solid fa-circle-check"></i>
+
+                </div>
+                <p class="formulario__input-error"> El teléfono sólo puede contener números y el máximo son 14 digitos. </p>
+            </div>
+    
+    
+            <!-- Grupo: Comentario-->
+            <div class="formulario__comentario" id="grupo__comentario">
+                <label for="comentario" class="formulario__label">Comentario</label>
+                <div class="formulario__grupo-input">
+                    <textarea class="formulario__input" name="comentario" rows="10" cols="40">Escribe tu comentario...</textarea>
+                    
+                   
+                </div>
+            </div>
+    
+            <!-- Mensaje de alerta -->
+            <div class="formulario__mensaje" id="formulario__mensaje">
+                <p><i class="fa-solid fa-triangle-exclamation"></i>
+                    <b>Error: </b> Favor complete el formulario correctamente.</p>
+            </div>
+    
+    
+            <!-- Grupo: Boton para enviar-->
+            <div class="formulario__grupo formulario__grupo-btn-enviar">
+                    <button type="submit" class="formulario__btn">
+                    Enviar
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </button>
+                    <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+            </div>
+            
+             
         </form>
+       
+    </main>
 
-    <br>
-    </main>    
-</header>
 
-<footer>
-    <nav>
-        <a href="https://www.instagram.com"> <i class="fa-brands fa-instagram fa-lg" style="color: #ffffff;"></i></a>
-        <a href="https://www.facebook.com/"> <i class="fa-brands fa-facebook fa-lg" style="color: #ffffff;"></i></a>      
-    </nav>
-    <p>Derechos reservados 2023</p>
-</footer>
+    <script src="formulario.js"></script>
+	<script src="https://kit.fontawesome.com/bbf22592e7.js" crossorigin="anonymous"></script>
 
+    <footer>
+        <nav>
+            <a href="https://www.instagram.com"> <i class="fa-brands fa-instagram fa-lg" style="color: #ffffff;"></i></a>
+            <a href="https://www.facebook.com/"> <i class="fa-brands fa-facebook fa-lg" style="color: #ffffff;"></i></a>      
+        </nav>
+        <p>Derechos reservados 2023</p>
+    </footer>
 </body>
 </html>
